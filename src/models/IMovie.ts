@@ -11,3 +11,9 @@ export interface IMovie {
   vote_average: number;
   vote_count: number;
 }
+
+export interface IMovieResponse {
+  page: number;
+  results: IMovie[];
+  total_pages: number;
+}
