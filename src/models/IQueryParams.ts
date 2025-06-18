@@ -11,6 +11,6 @@ type Sort =
 export interface IQueryParams {
     page: number;
     with_genres?: string;
-    search?: string;
+    query?: string;
     sort_by?: Sort;
 }
