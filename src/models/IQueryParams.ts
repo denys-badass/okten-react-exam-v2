@@ -1,4 +1,4 @@
-type Sort =
+export type Sort =
     'title.asc'
     | 'title.desc'
     | 'primary_release_date.asc'
@@ -6,11 +6,18 @@ type Sort =
     | 'vote_average.asc'
     | 'vote_average.desc'
     | 'vote_count.asc'
-    | 'vote_count.desc';
+    | 'vote_count.desc'
+    | 'popularity.desc'
+    | 'popularity.asc';
 
-export interface IQueryParams {
-    page: number;
-    with_genres?: string;
-    query?: string;
-    sort_by?: Sort;
+export interface ISearchParams {
+    page: string;
+    query: string;
 }
+
+export interface IQueryParams extends Omit<ISearchParams, 'query'> {
+    with_genres?: string;
+    sort_by: Sort;
+}
+
+
