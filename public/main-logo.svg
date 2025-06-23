@@ -1,0 +1,18 @@
+<svg width="300" height="90" viewBox="0 0 300 90" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3a7bd5" />
+            <stop offset="100%" stop-color="#e50914" />
+        </linearGradient>
+    </defs>
+
+    <text x="150" y="55" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="48"
+          text-anchor="middle" fill="url(#gradient)" letter-spacing="1">
+        MovieHub
+    </text>
+
+    <text x="150" y="80" font-family="Roboto, Arial, sans-serif" font-weight="300" font-size="20"
+          text-anchor="middle" fill="#555" letter-spacing="2">
+        DISCOVER STREAM
+    </text>
+</svg>
