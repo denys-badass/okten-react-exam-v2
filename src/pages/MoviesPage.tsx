@@ -7,7 +7,7 @@ export const MoviesPage = () => {
     const {params, setSortBy} = useMovieParams();
 
     return (
-        <div className='py-10'>
+        <div className='py-10 bg-gray-50'>
             <h1>{params.with_genres ? `${params.with_genres} movies` : 'Movies'}</h1>
             <div className='flex items-center justify-center h-8 gap-6'>
                 <div className='w-1/3 h-[2px] bg-linear-to-r from-indigo-600 to-gray-50'></div>

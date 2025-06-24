@@ -1,5 +1,6 @@
 import type {IMovieResponse} from "../../models/IMovie.ts";
 import {useQuery} from "@tanstack/react-query";
+import {MovieCard} from "../movie-card/MovieCard.tsx";
 
 type MovieListProps<T> = {
     params: T;
@@ -24,8 +25,8 @@ export const MovieList = <T,>({params, queryFn, queryKey}: MovieListProps<T>) =>
     }
 
     return (
-        <>
-            {data?.results?.map((movie) => <div key={movie.id}>{movie.title}</div>)}
-        </>
+        <div className='grid grid-cols-4 gap-6 w-3/4 mx-auto'>
+            {data?.results?.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+        </div>
     );
 };
