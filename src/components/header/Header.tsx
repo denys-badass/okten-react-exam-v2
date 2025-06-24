@@ -11,6 +11,7 @@ export const Header = () => {
                 <Menu/>
                 <SearchBar/>
                 <ToggleTheme/>
+                {/*TODO: Make login info component*/}
                 <p>Login</p>
             </div>
         </header>

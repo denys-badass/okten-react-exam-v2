@@ -15,11 +15,11 @@ export const useMovieParams = () => {
      }
 
      const setSortBy = (newSortBy: Sort) => {
-        setQuery({...query, sortBy: newSortBy as string, page: '1'});
+        setQuery({...query, sort_by: newSortBy as string, page: '1'});
      }
 
      const setWithGenres = (newWithGenres: string) => {
-        setQuery({...query, withGenres: newWithGenres, page: '1', sortBy: 'popularity.desc'});
+        setQuery({...query, with_genres: newWithGenres, page: '1', sort_by: 'popularity.desc'});
      }
 
      return {
