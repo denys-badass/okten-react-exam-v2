@@ -23,7 +23,6 @@ export const SearchBar = () => {
             <input
                 type="text"
                 placeholder='Search...'
-                className='py-1 pl-3 pr-9 w-[200px] border border-gray-500 rounded-[20px] focus:outline-0 focus:border-2 focus:border-indigo-600 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-indigo-500 transition-colors'
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}

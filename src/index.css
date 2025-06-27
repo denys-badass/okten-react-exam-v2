@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --font-limelight: "Limelight", sans-serif;
+}
+
 :root {
     background-color: #F5F5F5;
     color: #212121;
@@ -16,5 +21,25 @@
 body {
     width: 100%;
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-roboto), sans-serif;
+}
+
+input, select {
+    background: var(--color-gray-50);
+    padding: calc(var(--spacing) *1) calc(var(--spacing) * 3);
+    width: 200px;
+    border: 1px solid var(--color-gray-500);
+    border-radius: 20px;
+    transition: color;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 2px solid var(--color-indigo-600);
+}
+
+:root.dark input,
+:root.dark select {
+    background: var(--color-gray-700);
+    border-color: var(--color-gray-600);
 }
