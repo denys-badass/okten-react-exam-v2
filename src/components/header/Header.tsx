@@ -5,8 +5,8 @@ import {SearchBar} from "./search-bar/SearchBar.tsx";
 
 export const Header = () => {
     return (
-        <header className='relative'>
-            <div className='h-[100px] w-full flex items-center justify-around sticky top-0 z-30 bg-gray-50 border-b border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
+        <header className='relative w-full'>
+            <div className='h-[100px] w-3/4 mx-auto flex items-center justify-around fixed top-0 z-30 opacity-97 bg-gray-50 border-b border-gray-200 drop-shadow-xl dark:bg-gray-800 dark:border-gray-700'>
                 <Logo/>
                 <Menu/>
                 <SearchBar/>
