@@ -1,6 +1,7 @@
 import type {IMovieResponse} from "../../models/IMovie.ts";
 import {useQuery} from "@tanstack/react-query";
 import {MovieCard} from "../movie-card/MovieCard.tsx";
+import Masonry from "react-masonry-css";
 
 type MovieListProps<T> = {
     params: T;
@@ -25,8 +26,13 @@ export const MovieList = <T,>({params, queryFn, queryKey}: MovieListProps<T>) =>
     }
 
     return (
-        <div className='grid grid-cols-4 gap-6 w-3/4 mx-auto'>
-            {data?.results?.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+        <div className='w-6/7 mx-auto'>
+            <Masonry
+                className='flex -ml-5 p-6 w-auto'
+                columnClassName='pl-5 bg-clip-padding'
+                breakpointCols={{default: 4, 1200: 3, 800: 2, 500: 1}}>
+                {data?.results?.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+            </Masonry>
         </div>
     );
 };
