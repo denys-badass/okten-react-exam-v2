@@ -1,50 +1,55 @@
-import {useSearchParams} from "react-router-dom";
-import type {Sort} from "../models/IQueryParams.ts";
+import {useNavigate, useSearchParams} from "react-router-dom";
+import type {IMovieParams, Sort} from "../models/IMovieParams.ts";
 
 export const useMovieParams = () => {
     const [query, setQuery] = useSearchParams({page: '1', sort_by: 'popularity.desc'});
+    const navigate = useNavigate();
 
-    const updateQueryParams = (updates: Record<string, string>) => {
-        setQuery((prev) => {
-            const params = new URLSearchParams(prev);
-            Object.entries(updates).forEach(([key, value]) => {
-                if (value) {
+    const allowedKeys: (keyof IMovieParams)[] = ['page', 'sort_by', 'with_genres'];
+
+    const updateParams = (updates: Record<string, string>) => {
+        setQuery(() => {
+            const params = new URLSearchParams();
+
+            const currentParams: IMovieParams = {
+                page: query.get('page') || '1',
+                sort_by: query.get('sort_by') as Sort || 'popularity.desc',
+                with_genres: query.get('with_genres') || undefined,
+            }
+
+            const newParams: IMovieParams = {...currentParams, ...updates};
+
+            Object.entries(newParams).forEach(([key, value]) => {
+                if (allowedKeys.includes(key as keyof IMovieParams) && value !== undefined && value !== '') {
                     params.set(key, value);
-                } else {
-                    params.delete(key);
                 }
             });
+            navigate(`/movies?${params.toString()}`, {replace: true});
             return params;
-        });
+        })
     };
 
-    const params = {
+    const params: IMovieParams = {
         page: query.get('page') || '1',
         sort_by: query.get('sort_by') as Sort || 'popularity.desc' as Sort,
         with_genres: query.get('with_genres') || undefined,
-    }
+    };
 
-    const setPage = (newPage: string) => {
-        updateQueryParams({ page: newPage });
-    }
-
-    const setSortBy = (newSortBy: Sort) => {
-        updateQueryParams({
+    const setSortBy = (sort: Sort) => {
+        updateParams({
             page: '1',
-            sort_by: newSortBy,
-            with_genres: query.get('with_genres') || ''
+            sort_by: sort,
         });
+
     }
 
-    const setWithGenres = (newWithGenres: string) => {
-        updateQueryParams({
-            page: '1',
-            sort_by: 'popularity.desc',
-            with_genres: newWithGenres
-        });
+    const setWithGenres = (withGenres: string) => {
+        updateParams({page: '1', with_genres: withGenres, sort_by: 'popularity.desc' as Sort});
     }
 
     return {
-        params, setPage, setSortBy, setWithGenres,
+        params,
+        setSortBy,
+        setWithGenres,
     };
 };
