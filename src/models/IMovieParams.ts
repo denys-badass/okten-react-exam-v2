@@ -15,7 +15,7 @@ export interface ISearchParams {
     query: string;
 }
 
-export interface IQueryParams extends Omit<ISearchParams, 'query'> {
+export interface IMovieParams extends Omit<ISearchParams, 'query'> {
     with_genres?: string;
     sort_by: Sort;
 }
