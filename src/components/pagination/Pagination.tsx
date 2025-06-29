@@ -14,7 +14,7 @@ type PaginationProps = {
 
 export const Pagination: FC<PaginationProps> = ({currentPage, totalPages}) => {
     const setPage = useSetPage();
-    const MAX_PAGES = 500;
+    const MAX_PAGES = totalPages < 500 ? totalPages : 500;
 
     return (
         <nav className='flex justify-center items-center gap-10'>
@@ -28,10 +28,10 @@ export const Pagination: FC<PaginationProps> = ({currentPage, totalPages}) => {
             </div>
             <p>{currentPage}</p>
             <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => setPage(String(currentPage + 1))} disabled={currentPage === MAX_PAGES || currentPage === totalPages}>
+                <button onClick={() => setPage(String(currentPage + 1))} disabled={currentPage === MAX_PAGES}>
                     <MdOutlineKeyboardArrowRight/>
                 </button>
-                <button onClick={() => setPage(String(MAX_PAGES))} disabled={currentPage === MAX_PAGES || currentPage === totalPages}>
+                <button onClick={() => setPage(String(MAX_PAGES))} disabled={currentPage === MAX_PAGES}>
                     <MdOutlineKeyboardDoubleArrowRight/>
                 </button>
             </div>
