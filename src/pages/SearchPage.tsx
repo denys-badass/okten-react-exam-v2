@@ -8,7 +8,7 @@ export const SearchPage = () => {
 
 
     return (
-        <div className='py-10 bg-gray-50 dark:bg-gray-900'>
+        <div>
             <h1 className='text-4xl font-medium text-gray-900 dark:text-gray-100 mb-6 text-center'>Search Results for: {params.query}</h1>
             <div className='flex items-center justify-center h-8 gap-6'>
                 <div className='w-1/3 h-[2px] bg-linear-to-r from-indigo-600 to-gray-50 dark:to-gray-900'></div>

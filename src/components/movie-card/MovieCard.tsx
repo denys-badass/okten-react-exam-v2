@@ -23,7 +23,7 @@ export const MovieCard: FC<MovieCardProps> = ({movie}) => {
                     backdrop_path ?
                         <img src={import.meta.env.VITE_MOVIE_IMAGE_URL + '/w500' + backdrop_path} alt={`${title} backdrop`}
                              loading='lazy' className='max-h-[180px]'/> :
-                        <img src='/poster-placeholder.jpg' alt='placeholder poster' loading='lazy' className='max-h-[180px]'/>
+                        <img src='/poster-placeholder.jpg' alt='placeholder poster' loading='lazy' className='max-h-[220px]'/>
                 }
                 <div className='p-4'>
                     <h3 className='font-(family-name:--font-limelight) text-2xl'>{title}</h3>
