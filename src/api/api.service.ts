@@ -1,18 +1,18 @@
 import axios from "axios";
 
-export const axiosInstance = axios.create({
+export const axiosMovieInstance = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL,
     headers: {
         'accept': 'application/json',
     },
 })
 
-axiosInstance.interceptors.request.use((request) => {
+axiosMovieInstance.interceptors.request.use((request) => {
     request.headers.Authorization = 'Bearer ' + import.meta.env.VITE_API_AUTH_TOKEN;
     return request;
 })
 
-axiosInstance.interceptors.response.use(
+axiosMovieInstance.interceptors.response.use(
     (response) => response,
     (error) => {
         console.error("Error: " + error.message);
