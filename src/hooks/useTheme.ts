@@ -1,10 +1,15 @@
-import {ThemeContext, type ThemeContextProps} from "../context/ThemeContext.ts";
-import {useContext} from "react";
+import {useThemeStore} from "../store/useThemeStore.ts";
+import {useEffect} from "react";
 
-export const useTheme = (): ThemeContextProps => {
-    const context = useContext(ThemeContext);
-    if (!context) {
-        throw new Error('useTheme must be used within ThemeProvider');
-    }
-    return context;
+export const useTheme = () => {
+    const theme = useThemeStore(state => state.theme);
+    const toggleTheme = useThemeStore(state => state.toggleTheme);
+
+    useEffect(() => {
+        const root = document.documentElement;
+        root.classList.remove(theme === 'light' ? 'dark' : 'light');
+        root.classList.add(theme);
+    }, [theme]);
+
+    return {theme, toggleTheme};
 }

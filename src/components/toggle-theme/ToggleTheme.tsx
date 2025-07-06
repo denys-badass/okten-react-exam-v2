@@ -12,7 +12,6 @@ export const ToggleTheme = () => {
                 {
                     theme === 'light' ? <MdOutlineLightMode/> : <MdDarkMode/>
                 }
-
             </div>
         </>
     );
