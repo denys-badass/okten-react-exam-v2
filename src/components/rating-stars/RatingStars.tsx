@@ -15,9 +15,9 @@ export const RatingStars: FC<RatingProps> = ({rating}) => {
 
     return (
         <div className="flex items-center">
-            {Array(fullStars).fill(<span className="text-yellow-500"><FaStar/></span>)}
+            {fullStars > 0 && Array(fullStars).fill(<span className="text-yellow-500"><FaStar/></span>)}
             {halfStar ? <span className="text-yellow-500"><FaRegStarHalfStroke/></span> : null}
-            {Array(emptyStars).fill(<span className="text-yellow-500"><FaRegStar/></span>)}
+            {emptyStars > 0 && Array(emptyStars).fill(<span className="text-yellow-500"><FaRegStar/></span>)}
         </div>
     );
 };

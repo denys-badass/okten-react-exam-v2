@@ -2,13 +2,23 @@ import {useSearchMovieParams} from "../hooks/useSearchMovieParams.ts";
 import {MovieList} from "../components/movie-list/MovieList.tsx";
 import type {ISearchParams} from "../models/IMovieParams.ts";
 import {movieService} from "../api/movie.service.ts";
+import {MovieInfo} from "../components/movie-info/MovieInfo.tsx";
+import {useSelectedMovie} from "../hooks/useSelectedMovie.ts";
+import {useEffect} from "react";
+import {goToUpScreen} from "../utils/goToUpScreen.ts";
 
 export const SearchPage = () => {
     const {params} = useSearchMovieParams();
+    const selectedMovie = useSelectedMovie([params.query, params.page]);
 
+    useEffect(() => {
+        goToUpScreen();
+    }, [selectedMovie, params.page, params.query]);
 
     return (
         <div>
+            {selectedMovie && <MovieInfo movie={selectedMovie}/>}
+
             <h1 className='text-4xl font-medium text-gray-900 dark:text-gray-100 mb-6 text-center'>Search Results for: {params.query}</h1>
             <div className='flex items-center justify-center h-8 gap-6'>
                 <div className='w-1/3 h-[2px] bg-linear-to-r from-indigo-600 to-gray-50 dark:to-gray-900'></div>
