@@ -7,15 +7,19 @@ export const useMovieParams = () => {
 
     const allowedKeys: (keyof IMovieParams)[] = ['page', 'sort_by', 'with_genres'];
 
+    const getParams = (): IMovieParams => {
+        return {
+            page: query.get('page') || '1',
+            sort_by: query.get('sort_by') as Sort || 'popularity.desc',
+            with_genres: query.get('with_genres') || undefined,
+        } as IMovieParams;
+    }
+
     const updateParams = (updates: Record<string, string>) => {
         setQuery(() => {
             const params = new URLSearchParams();
 
-            const currentParams: IMovieParams = {
-                page: query.get('page') || '1',
-                sort_by: query.get('sort_by') as Sort || 'popularity.desc',
-                with_genres: query.get('with_genres') || undefined,
-            }
+            const currentParams = getParams();
 
             const newParams: IMovieParams = {...currentParams, ...updates};
 
@@ -29,18 +33,13 @@ export const useMovieParams = () => {
         })
     };
 
-    const params: IMovieParams = {
-        page: query.get('page') || '1',
-        sort_by: query.get('sort_by') as Sort || 'popularity.desc' as Sort,
-        with_genres: query.get('with_genres') || undefined,
-    };
+    const params = getParams();
 
     const setSortBy = (sort: Sort) => {
         updateParams({
             page: '1',
             sort_by: sort,
         });
-
     }
 
     const setWithGenres = (withGenres: string) => {
