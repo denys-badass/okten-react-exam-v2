@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {UserAvatar} from "../user-avatar/UserAvatar.tsx";
 import {useLoginStore} from "../../../store/useLoginStore.ts";
+import styles from "./LoginInfo.module.css";
 
 export const LoginInfo = () => {
     const user = useLoginStore(state => state.user);
@@ -9,9 +10,10 @@ export const LoginInfo = () => {
     if (user) {
         return <UserAvatar user={user}/>
     }
-    if (loginType === 'guest') {
-        return <Link to={'/login'} className='hover:text-indigo-600'>Welcome, Guest</Link>;
-    }
 
-    return <Link to={'/login'} className='hover:text-indigo-600'>Login</Link>;
+    return (
+        <div className={styles.loginLink}>
+            <Link to={'/login'}>{loginType === 'guest' ? 'Welcome, Guest' : 'Login'}</Link>
+        </div>
+    );
 };

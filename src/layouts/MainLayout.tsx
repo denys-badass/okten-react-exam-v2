@@ -3,12 +3,12 @@ import {Header} from "../components/header/Header.tsx";
 
 const MainLayout = () => {
     return (
-        <div className='w-5/6 mx-auto'>
+        <div>
             <header>
                 <Header/>
             </header>
-            <main className='pt-[100px]'>
-                <div className='py-10 bg-gray-50 dark:bg-gray-900 min-h-[90dvh]'>
+            <main>
+                <div>
                     <Outlet/>
                 </div>
             </main>

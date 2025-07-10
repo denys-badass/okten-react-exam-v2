@@ -1,0 +1,12 @@
+.searchInput {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 0.75rem;
+    top: calc(1/2 * 100%);
+    translate: 0 calc(calc(1/2 * 100%) * -1);
+    color: var(--color-gray-400, #99A1AF);
+}

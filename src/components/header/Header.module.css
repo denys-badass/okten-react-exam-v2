@@ -1,0 +1,29 @@
+.header {
+    height: 100px;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 30;
+    opacity: 98%;
+    background-color: var(--color-gray-50, #F9FAFB);
+    border-bottom: 1px solid var(--color-gray-200, #E5E7EB);
+    filter: drop-shadow(0 9px 7px rgb(0 0 0 / 0.1));
+}
+
+.rightSideHeader {
+    height: 100%;
+    min-width: calc(1 / 5 * 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+:global(.dark) .header {
+    background-color: var(--color-gray-800, #1E2939);
+    border-bottom: 1px solid rgb(79 57 246 / 0.2);
+    filter: drop-shadow(0 9px 7px rgb(79 57 246 / 0.2));
+}

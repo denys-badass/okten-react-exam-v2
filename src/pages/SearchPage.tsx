@@ -17,7 +17,7 @@ export const SearchPage = () => {
 
     return (
         <div>
-            {selectedMovie && <MovieInfo movie={selectedMovie}/>}
+            {selectedMovie && <MovieInfo movie={selectedMovie} />}
 
             <h1 className='text-4xl font-medium text-gray-900 dark:text-gray-100 mb-6 text-center'>Search Results for: {params.query}</h1>
             <div className='flex items-center justify-center h-8 gap-6'>

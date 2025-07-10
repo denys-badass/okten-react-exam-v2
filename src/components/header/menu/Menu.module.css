@@ -1,0 +1,23 @@
+.menuList {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1.125rem;
+}
+
+.menuItem {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color;
+    transition-duration: 0.3s;
+}
+
+.menuItem:hover {
+    color: var(--color-indigo-600, #4F39F6);
+    cursor: pointer;
+}

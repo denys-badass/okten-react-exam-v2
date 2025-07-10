@@ -1,32 +1,12 @@
 import { BiSearch } from 'react-icons/bi';
-import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import React from "react";
+import styles from "./SearchBar.module.css";
+import {useAppSearch} from "./useAppSearch.ts";
 
 export const SearchBar = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [query, setQuery] = useState('');
-
-    useEffect(() => {
-        if (!location.pathname.startsWith('/search')) {
-            setQuery('');
-        }
-    }, [location.pathname]);
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        const rawQuery = query.trim();
-        if (e.key === 'Enter') {
-            if (rawQuery) {
-                navigate(`/search?query=${(rawQuery)}&page=1`, { replace: true });
-            } else {
-                navigate('/movies');
-            }
-        }
-    };
+    const { query, setQuery, handleKeyDown } = useAppSearch();
 
     return (
-        <div className="relative">
+        <div className={styles.searchInput}>
             <input
                 type="text"
                 placeholder='Search...'
@@ -35,7 +15,7 @@ export const SearchBar = () => {
                 onKeyDown={handleKeyDown}
             />
             <BiSearch
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                className={styles.searchIcon}
                 size={18}
             />
         </div>
