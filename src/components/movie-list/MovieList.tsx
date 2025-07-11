@@ -49,7 +49,7 @@ export const MovieList = <T,>({params, queryFn, queryKey}: MovieListProps<T>) =>
             <Masonry
                 className='flex -ml-5 p-6 w-auto'
                 columnClassName='pl-5 bg-clip-padding'
-                breakpointCols={{default: 4, 1200: 3, 800: 2, 500: 1}}>
+                breakpointCols={{default: 5, 1300: 4, 1100: 3, 800: 2, 440: 1}}>
                 {results?.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </Masonry>
             <div>
