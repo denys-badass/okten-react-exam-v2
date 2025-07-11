@@ -1,5 +1,5 @@
 import React, {type FC} from "react";
-import {useLoginStore} from "../../store/useLoginStore.ts";
+import {useLoginStore} from "../store/useLoginStore.ts";
 import {Navigate} from "react-router-dom";
 
 type LoginRouteProps = {

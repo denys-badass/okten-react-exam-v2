@@ -3,8 +3,8 @@ import MainLayout from "../layouts/MainLayout.tsx";
 import {WelcomePage} from "../pages/welcome-page/WelcomePage.tsx";
 import {MoviesPage} from "../pages/MoviesPage.tsx";
 import {SearchPage} from "../pages/SearchPage.tsx";
-import {LoginPage} from "../pages/LoginPage.tsx";
-import {LoginRoute} from "../components/login-route/LoginRoute.tsx";
+import {LoginPage} from "../pages/login-page/LoginPage.tsx";
+import {LoginRoute} from "./LoginRoute.tsx";
 
 export const routes = createBrowserRouter([
     {path: '/', element: <MainLayout/>, children: [
