@@ -18,9 +18,7 @@ export const useMovieParams = () => {
     const updateParams = (updates: Record<string, string>) => {
         setQuery(() => {
             const params = new URLSearchParams();
-
             const currentParams = getParams();
-
             const newParams: IMovieParams = {...currentParams, ...updates};
 
             Object.entries(newParams).forEach(([key, value]) => {

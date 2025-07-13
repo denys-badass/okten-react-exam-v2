@@ -1,0 +1,29 @@
+.genreList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.genreItem {
+    background-color: var(--color-gray-800, #1E2939);
+    color: var(--color-gray-50, #F9FAFB);
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+.genreItem:hover {
+    color: var(--color-indigo-600, #4F39F6);
+}
+
+:global(.dark) .genreItem {
+    background-color: var(--color-gray-50, #F9FAFB);
+    color: var(--color-gray-800, #1E2939);
+}
+
+:global(.dark) .genreItem:hover {
+    color: var(--color-indigo-600, #4F39F6);
+}

@@ -7,6 +7,7 @@ import {getYear} from "../../utils/getYear.ts";
 import {GenreBadgesList} from "../genre-badges-list/GenreBadgesList.tsx";
 import {FaCamera} from "react-icons/fa6";
 import {PosterPreview} from "../poster-preview/PosterPreview.tsx";
+import styles from "./MovieInfo.module.css";
 
 type MovieInfoProps = {
     movie: IMovie;
@@ -31,25 +32,24 @@ export const MovieInfo: FC<MovieInfoProps> = ({movie}) => {
     const backdropUrl: string = backdrop_path ? import.meta.env.VITE_MOVIE_IMAGE_URL + '/original' + backdrop_path : '/poster-placeholder.jpg';
 
     return (
-        <div className={`relative -mt-10 mb-10 h-[600px]`}>
-            <div className='absolute inset-0 bg-cover bg-center bg-no-repeat z-10 mask-b-from-20% mask-b-to-95%'
-                 style={{backgroundImage: `url(${backdropUrl})`}}>
+        <div className={styles.infoContainer}>
+            <div className={styles.infoBg} style={{backgroundImage: `url(${backdropUrl})`}}>
             </div>
-            <div className='absolute inset-0 flex justify-end flex-col z-20 w-[90%] mx-auto gap-2'>
+            <div className={styles.describeContainer}>
                 <div>
-                    <h2 className='font-(family-name:--font-limelight) text-4xl text-shadow-md text-shadow-gray-50 dark:text-shadow-gray-900'>{title}</h2>
-                    <h3 className='text-2xl italic'>{original_title !== title && original_title}</h3>
+                    <h2 className={styles.mainTitle}>{title}</h2>
+                    <h3 className={styles.subTitle}>{original_title !== title && original_title}</h3>
                 </div>
-                <p className='font-light text-xl'>{year}</p>
+                <p className={styles.year}>{year}</p>
                 <p>{overview}</p>
-                <div className='flex gap-2'>
+                <div className={styles.rating}>
                     <RatingStars rating={fiveStar}/>
                     <p>{fiveStar}</p>
-                    <p className='flex items-center gap-1'>({vote_count} <span><FaEye/></span>)</p>
+                    <p className={styles.vote}>({vote_count} <span><FaEye/></span>)</p>
                 </div>
-                <div className='my-2.5 flex justify-between'>
+                <div className={styles.genresList}>
                     <GenreBadgesList genreIds={genre_ids}/>
-                    <div className='flex items-center gap-2 cursor-pointer hover:scale-105 hover:text-indigo-800 dark:hover:text-indigo-600 transition-all duration-300' onClick={() => setShowPoster(true)}>
+                    <div className={styles.posterLink} onClick={() => setShowPoster(true)}>
                         <p>Show Poster</p>
                         <span><FaCamera /></span>
                     </div>

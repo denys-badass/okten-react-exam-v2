@@ -26,11 +26,24 @@
     transition-duration: 0.3s;
 }
 
-/* Тільки колір для темної теми */
 :global(.dark) .paginationButton {
     color: var(--color-gray-50, #F9FAFB);
 }
 
 :global(.dark) .paginationButton:disabled {
     color: var(--color-gray-700, #374151);
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }

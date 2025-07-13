@@ -1,6 +1,7 @@
 import type {FC} from "react";
 import {FaRegWindowClose} from "react-icons/fa";
 import ReactDOM from "react-dom";
+import styles from "./PosterPreview.module.css";
 
 type PosterPreviewProps = {
     posterUrl: string;
@@ -17,18 +18,17 @@ export const PosterPreview: FC<PosterPreviewProps> = ({posterUrl, setShowPoster}
         : '/poster-placeholder.jpg';
 
     return ReactDOM.createPortal(
-        <div className='fixed inset-0 z-100 flex items-center justify-center' onClick={handleClose}>
-            <div className='absolute inset-0 bg-gray-900/70 backdrop-blur-sm'></div>
+        <div className={styles.posterContainer} onClick={handleClose}>
+            <div className={styles.posterBg}></div>
 
-            <div className='relative z-101 rounded-lg overflow-hidden shadow-2xl'
-                 onClick={(e) => e.stopPropagation()}>
+            <div className={styles.posterBlock} onClick={(e) => e.stopPropagation()}>
                 <img
                     src={fullPosterUrl}
                     alt='Movie Poster'
-                    className='w-full h-full object-contain'
+                    className={styles.posterImg}
                 />
                 <button
-                    className='absolute top-4 right-4 text-gray-200 hover:text-indigo-600 bg-gray-800/50 hover:bg-gray-800/80 rounded-full p-2 transition-all duration-300 cursor-pointer'
+                    className={styles.closeBtn}
                     onClick={handleClose}
                 >
                     <FaRegWindowClose size={24} />

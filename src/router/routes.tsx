@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router-dom";
 import MainLayout from "../layouts/MainLayout.tsx";
 import {WelcomePage} from "../pages/welcome-page/WelcomePage.tsx";
-import {MoviesPage} from "../pages/MoviesPage.tsx";
-import {SearchPage} from "../pages/SearchPage.tsx";
+import {MoviesPage} from "../pages/movies-page/MoviesPage.tsx";
+import {SearchPage} from "../pages/search-page/SearchPage.tsx";
 import {LoginPage} from "../pages/login-page/LoginPage.tsx";
 import {LoginRoute} from "./LoginRoute.tsx";
 

@@ -4,7 +4,7 @@ import {
     MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight
 } from "react-icons/md";
 import type {FC} from "react";
-import style from "./Pagination.module.css";
+import styles from "./Pagination.module.css";
 import {useSetPage} from "../../hooks/useSetPage.ts";
 
 type PaginationProps = {
@@ -17,21 +17,21 @@ export const Pagination: FC<PaginationProps> = ({currentPage, totalPages}) => {
     const MAX_PAGES = totalPages < 500 ? totalPages : 500;
 
     return (
-        <nav className='flex justify-center items-center gap-10'>
-            <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => setPage('1')} disabled={currentPage === 1} className={style.paginationButton}>
+        <nav className={styles.nav}>
+            <div className={styles.buttonContainer}>
+                <button onClick={() => setPage('1')} disabled={currentPage === 1} className={styles.paginationButton}>
                     <MdOutlineKeyboardDoubleArrowLeft/>
                 </button>
-                <button onClick={() => setPage(String(currentPage - 1))} disabled={currentPage === 1} className={style.paginationButton}>
+                <button onClick={() => setPage(String(currentPage - 1))} disabled={currentPage === 1} className={styles.paginationButton}>
                     <MdOutlineKeyboardArrowLeft/>
                 </button>
             </div>
             <p>{currentPage}</p>
-            <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => setPage(String(currentPage + 1))} disabled={currentPage === MAX_PAGES} className={style.paginationButton}>
+            <div className={styles.buttonContainer}>
+                <button onClick={() => setPage(String(currentPage + 1))} disabled={currentPage === MAX_PAGES} className={styles.paginationButton}>
                     <MdOutlineKeyboardArrowRight/>
                 </button>
-                <button onClick={() => setPage(String(MAX_PAGES))} disabled={currentPage === MAX_PAGES} className={style.paginationButton}>
+                <button onClick={() => setPage(String(MAX_PAGES))} disabled={currentPage === MAX_PAGES} className={styles.paginationButton}>
                     <MdOutlineKeyboardDoubleArrowRight/>
                 </button>
             </div>

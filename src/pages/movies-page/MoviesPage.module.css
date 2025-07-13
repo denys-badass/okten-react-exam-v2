@@ -1,0 +1,39 @@
+.heading {
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--color-gray-900, #101828);
+    text-align: center;
+}
+
+:global(.dark) .heading {
+    color: var(--color-gray-100, #F3F4F6);
+}
+
+.pageNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 32px;
+}
+
+.line {
+    width: 33%;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-indigo-600, #4F39F6), var(--color-gray-50, #F9FAFB));
+}
+
+:global(.dark) .line {
+    background: linear-gradient(to right, var(--color-indigo-600, #4F39F6), var(--color-gray-900, #101828));
+}
+
+.rightLine {
+    transform: rotate(180deg);
+}
+
+.sortBar {
+    width: calc(3/4 * 100%);
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}

@@ -1,0 +1,51 @@
+.cardContainer {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1.25rem;
+}
+
+.cardContainer:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+:global(.dark) .cardContainer {
+    background-color: var(--color-gray-800, #1E2939);
+}
+
+:global(.dark) .cardContainer:hover {
+    box-shadow: 0 20px 25px -5px rgb(79 57 246 / 0.2), 0 8px 10px -6px rgb(79 57 246 / 0.2);
+}
+
+.cardLink {
+    cursor: pointer;
+}
+
+.img {
+    object-fit: fill;
+}
+
+.cardTextContainer {
+    padding: 1rem;
+}
+
+.cardTitle {
+    font-family: var(--font-limelight, 'Limelight'), serif;
+    font-size: 1.5rem;
+}
+
+.ratingStars {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ratingNumber {
+    padding-top: 0.125rem;
+}
+
+.genreBadges {
+    padding: 0 1rem 1rem 1rem;
+}

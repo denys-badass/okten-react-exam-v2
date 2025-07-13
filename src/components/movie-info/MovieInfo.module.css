@@ -1,0 +1,83 @@
+.infoContainer {
+    position: relative;
+    margin-top: -2.5rem;
+    margin-bottom: 2.5rem;
+    height: 600px;
+}
+
+.infoBg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 10;
+    mask-image: linear-gradient(to top, transparent 20%, black 95%);
+}
+
+.describeContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 90%;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.mainTitle {
+    font-family: var(--font-limelight, 'Limelight'), serif;
+    font-size: 2.25rem;
+    text-shadow:  0 1px 1px rgb(249, 250, 251), 0 1px 2px rgb(249, 250, 251), 0 2px 4px rgb(249, 250, 251);
+}
+
+:global(.dark) .mainTitle {
+    text-shadow: 0 1px 1px rgb(16, 24, 40), 0 1px 2px rgb(16, 24, 40), 0 2px 4px rgb(16, 24, 40);
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.year {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.rating {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.vote {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.genresList {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.625rem 0;
+}
+
+.posterLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.posterLink:hover {
+    transform: scale(1.05);
+    color: var(--color-indigo-800, #372AAC);
+}
+
+:global(.dark) .posterLink:hover {
+    color: var(--color-indigo-600, #4F39F6);
+}

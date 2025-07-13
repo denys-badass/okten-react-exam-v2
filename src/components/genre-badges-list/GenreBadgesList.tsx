@@ -1,5 +1,6 @@
 import type {FC} from "react";
 import {GenreLink} from "../genre-link/GenreLink.tsx";
+import styles from './GenreBadgesList.module.css';
 
 type GenreBadgesListProps = {
     genreIds: number[];
@@ -11,11 +12,11 @@ export const GenreBadgesList: FC<GenreBadgesListProps> = ({genreIds}) => {
     }
 
     return (
-        <ul className='flex flex-wrap gap-2'>
+        <ul className={styles.genreList}>
             {genreIds.map((genreId) => (
                 <li
                     key={genreId}
-                    className='bg-gray-800 text-gray-50 hover:text-indigo-600 dark:text-gray-800 dark:bg-gray-50 rounded-xl flex items-center justify-center px-2 cursor-pointer'>
+                    className={styles.genreItem}>
                     <GenreLink genreId={genreId} />
                 </li>
             ))}
