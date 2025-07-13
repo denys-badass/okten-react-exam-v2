@@ -3,7 +3,7 @@ import {genreService} from "../genre.service.ts";
 
 export const useGenreQuery = () => {
     const genreMap = new Map<number, string>();
-    const {data} = useQuery({
+    const {data, error, isError} = useQuery({
         queryKey: ['genres'],
         queryFn: async () => {
             return genreService.getGenres();
@@ -14,5 +14,5 @@ export const useGenreQuery = () => {
         genreMap.set(genre.id, genre.name);
     });
 
-    return {genres: data, genreMap};
+    return {genres: data, genreMap, error, isError};
 }

@@ -11,7 +11,7 @@ export const SortBar: FC<SortProps> = ({sort, setSort}) => {
     return (
         <>
             <label>Sort by:
-                <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className='ml-2' defaultValue='popularity.desc'>
+                <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className='ml-2'>
                     <option value='popularity.desc'>Popularity ↓</option>
                     <option value='popularity.asc'>Popularity ↑</option>
                     <option value='title.desc'>Title ↓</option>

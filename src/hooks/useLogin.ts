@@ -21,6 +21,8 @@ export const useLogin = () => {
             setLoginError(null);
             navigate('/movies');
         } catch (e) {
+            const error = e as Error;
+            console.error('Login Error', error.message || 'Unknown error');
             setLoginError('Failed to log in. Wrong username or password.');
             return e;
         }

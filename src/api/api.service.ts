@@ -15,6 +15,11 @@ axiosMovieInstance.interceptors.request.use((request) => {
 axiosMovieInstance.interceptors.response.use(
     (response) => response,
     (error) => {
-        console.error("Error: " + error.message);
+        console.error("API Error:", {
+            url: error.config?.url,
+            method: error.config?.method,
+            status: error.response?.status,
+            message: error.message
+        });
         return Promise.reject(error);
     });

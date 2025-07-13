@@ -8,7 +8,11 @@ type GenreMenuProps = {
 }
 
 export const GenreMenu: FC<GenreMenuProps> = ({isVisible}) => {
-    const {genres} = useGenreQuery();
+    const {genres, isError, error} = useGenreQuery();
+
+    if (isError) {
+        return <div className={styles.error}>Error: {error instanceof Error ? error.message : 'Failed to load genres'}</div>
+    }
 
     return (
         <div className={`${styles.container} ${!isVisible && styles.hiddenContainer}`}>

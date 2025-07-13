@@ -10,17 +10,29 @@ const axiosUserInstance = axios.create({
 
 export const userService = {
     userLogin: async (username: string, password: string): Promise<IUser> => {
-        const {data} = await axiosUserInstance.post('/login', {
-            username,
-            password
-        });
-        return data;
+        try {
+            const {data} = await axiosUserInstance.post('/login', {
+                username,
+                password
+            });
+            return data;
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                throw new Error(`Authentication Failed: ${error.response?.data?.message || error.message}`);
+            }
+            throw new Error(`Unknown Error: ${error}`);
+        }
     },
 }
 
 axiosUserInstance.interceptors.response.use(
     (response) => response,
     (error) => {
-        console.error("Error: " + error.message);
+        console.error("API Error:", {
+            url: error.config?.url,
+            method: error.config?.method,
+            status: error.response?.status,
+            message: error.message
+        });
         return Promise.reject(error);
     });

@@ -45,3 +45,12 @@
 :global(.dark) .genreItem:hover {
     color: var(--color-indigo-600, #4F39F6);
 }
+
+.error {
+    text-align: center;
+    color: var(--color-gray-500, #6A7282);
+    font-family: var(--font-limelight, 'Limelight'), serif;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    height: 100vh;
+}
