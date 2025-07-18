@@ -1,5 +1,11 @@
+.menuWrapper {
+    display: grid;
+    place-items: center;
+    grid-column: span 2 / span 2;
+}
+
 .menuList {
-    height: 100%;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +15,8 @@
 }
 
 .menuItem {
-    height: 100%;
+    height: 100px;
+    padding-right: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,4 +27,10 @@
 .menuItem:hover {
     color: var(--color-indigo-600, #4F39F6);
     cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .menuList {
+        height: 60px;
+    }
 }

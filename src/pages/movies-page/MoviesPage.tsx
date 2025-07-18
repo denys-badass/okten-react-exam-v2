@@ -20,7 +20,7 @@ export const MoviesPage = () => {
     }, [params.with_genres, selectedMovie, params.page, params.sort_by]);
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             {selectedMovie && <MovieInfo movie={selectedMovie}/>}
 
             <h1 className={styles.heading}>{params.with_genres ? `${genreName} movies` : 'Movies'}</h1>

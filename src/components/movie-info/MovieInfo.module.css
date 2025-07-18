@@ -1,8 +1,8 @@
 .infoContainer {
     position: relative;
-    margin-top: -2.5rem;
-    margin-bottom: 2.5rem;
     height: 600px;
+    max-width: 2000px;
+    margin: -2.5rem auto 2.5rem auto;
 }
 
 .infoBg {
@@ -59,14 +59,16 @@
 }
 
 .genresList {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 0.625rem 0;
 }
 
 .posterLink {
+    width: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;

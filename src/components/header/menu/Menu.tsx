@@ -7,7 +7,7 @@ export const Menu = () => {
     const [visible, setVisible] = useState(false);
 
     return (
-        <>
+        <div className={styles.menuWrapper}>
             <ul className={styles.menuList} onMouseLeave={() => setVisible(false)}>
                 <li className={styles.menuItem} onClick={() => setVisible(false)}>
                     <Link to={'/movies'}>Movies</Link>
@@ -17,6 +17,6 @@ export const Menu = () => {
                     <GenreMenu isVisible={visible} />
                 </li>
             </ul>
-        </>
+        </div>
     );
 };

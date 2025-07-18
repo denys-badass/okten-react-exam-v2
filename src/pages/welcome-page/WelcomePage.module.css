@@ -1,7 +1,7 @@
 .welcomeContainer {
-    width: 100%;
+    width: 100dvw;
     margin-top: -2.5rem;
-    height: 90dvh;
+    height: 100dvh;
     background: var(--color-gray-50, #F9FAFB);
     background: linear-gradient(205deg, #F9FAFB 40%, #A3B3FF 80%, rgba(79, 57,246, 0.5) 100%);
 }

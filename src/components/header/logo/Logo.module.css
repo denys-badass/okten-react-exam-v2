@@ -1,5 +1,15 @@
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    grid-column: span 3 / span 3;
+}
+
+@media screen and (max-width: 576px) {
+    .logo {
+        max-width: 200px;
+        grid-column: span 2 / span 2;
+        grid-column-start: 2;
+        place-items: center;
+        justify-self: center;
+    }
 }

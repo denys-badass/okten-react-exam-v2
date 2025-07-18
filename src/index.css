@@ -11,6 +11,7 @@
 :root {
     background-color: var(--color-gray-50, #F9FAFB);
     color: #212121;
+    font-size: 18px;
 }
 
 :root.dark {
@@ -32,7 +33,7 @@ main {
 input, select {
     background: var(--color-gray-50, #F9FAFB);
     padding: 0.25rem 0.75rem;
-    width: 200px;
+    width: 100%;
     border: 1px solid var(--color-gray-500, #6B7280);
     border-radius: 20px;
     transition: color;
@@ -47,4 +48,10 @@ input:focus, select:focus {
 :root.dark select {
     background: var(--color-gray-700, #374151);
     border-color: var(--color-gray-600, #4B5563);
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        font-size: 16px;
+    }
 }

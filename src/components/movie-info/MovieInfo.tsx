@@ -50,7 +50,7 @@ export const MovieInfo: FC<MovieInfoProps> = ({movie}) => {
                 <div className={styles.genresList}>
                     <GenreBadgesList genreIds={genre_ids}/>
                     <div className={styles.posterLink} onClick={() => setShowPoster(true)}>
-                        <p>Show Poster</p>
+                        <p>Poster</p>
                         <span><FaCamera /></span>
                     </div>
                 </div>

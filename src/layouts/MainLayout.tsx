@@ -8,9 +8,7 @@ const MainLayout = () => {
                 <Header/>
             </header>
             <main>
-                <div>
                     <Outlet/>
-                </div>
             </main>
         </div>
     );

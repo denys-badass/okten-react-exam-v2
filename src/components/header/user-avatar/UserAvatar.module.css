@@ -17,3 +17,13 @@
     align-items: center;
     cursor: pointer;
 }
+
+@media screen and (max-width: 576px) {
+    .avatarContainer {
+        display: grid;
+        place-items: center;
+        justify-self: self-end;
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+}

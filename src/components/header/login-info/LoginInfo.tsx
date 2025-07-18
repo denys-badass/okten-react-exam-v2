@@ -13,7 +13,7 @@ export const LoginInfo = () => {
 
     return (
         <div className={styles.loginLink}>
-            <Link to={'/login'}>{loginType === 'guest' ? 'Welcome, Guest' : 'Login'}</Link>
+            <Link to={'/login'}>{loginType === 'guest' ? 'Guest' : 'LogIn'}</Link>
         </div>
     );
 };

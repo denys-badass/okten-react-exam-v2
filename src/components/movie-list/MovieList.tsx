@@ -32,7 +32,7 @@ export const MovieList = <T,>({params, queryFn, queryKey}: MovieListProps<T>) =>
     }
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <Masonry
                 className={styles.masonry}
                 columnClassName={styles.masonryColumn}

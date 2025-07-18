@@ -1,5 +1,6 @@
 .formContainer {
-    min-width: 400px;
+    max-width: 400px;
+    min-width: 200px;
     min-height: 400px;
     padding: 2.5rem;
     border: 2px solid var(--color-gray-300, #D1D5DC);
@@ -52,12 +53,14 @@
 
 .input {
     height: 40px;
-    min-width: 300px;
+    width: 100%;
+    max-width: 300px;
     font-size: 1rem;
 }
 
 .submitButton {
-    min-width: 300px;
+    max-width: 300px;
+    width: 100%;
     min-height: 40px;
     font-size: 1.125rem;
     color: var(--color-gray-50, #F9FAFB);
