@@ -1,5 +1,6 @@
 import type {FC} from "react";
 import type {Sort} from "../../models/IMovieParams.ts";
+import styles from "./SortBar.module.css";
 
 type SortProps = {
     sort: Sort;
@@ -11,7 +12,7 @@ export const SortBar: FC<SortProps> = ({sort, setSort}) => {
     return (
         <>
             <label>Sort by:
-                <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className='ml-2 max-w-[200px]'>
+                <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className={styles.select}>
                     <option value='popularity.desc'>Popularity ↓</option>
                     <option value='popularity.asc'>Popularity ↑</option>
                     <option value='title.desc'>Title ↓</option>

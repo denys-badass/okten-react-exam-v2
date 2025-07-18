@@ -17,7 +17,7 @@ export const RatingStars: FC<RatingProps> = ({rating}) => {
     return (
         <div className={styles.starList}>
             {fullStars > 0 && Array(fullStars).fill(<FaStar/>).map((star, index) => (<span key={index} className={styles.star}>{star}</span>))}
-            {halfStar ? <span className="text-yellow-500"><FaRegStarHalfStroke/></span> : null}
+            {halfStar ? <span className={styles.star}><FaRegStarHalfStroke/></span> : null}
             {emptyStars > 0 && Array(emptyStars).fill(<FaRegStar/>).map((star, index) => (<span key={index} className={styles.star}>{star}</span>))}
         </div>
     );
