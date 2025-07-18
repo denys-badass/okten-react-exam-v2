@@ -1,0 +1,9 @@
+.star {
+    color: var(--color-yellow-500, #EFB100);
+}
+
+.starList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

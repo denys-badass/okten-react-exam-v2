@@ -1,0 +1,93 @@
+.formContainer {
+    max-width: 400px;
+    min-width: 200px;
+    min-height: 400px;
+    padding: 2.5rem;
+    border: 2px solid var(--color-gray-300, #D1D5DC);
+    border-radius: 0.75rem;
+}
+
+:global(.dark) .formContainer {
+    border-color: var(--color-gray-600, #4A5565);
+}
+
+.formHeader {
+    font-size: 1.875rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.loginError {
+    color: var(--color-red-500, #FB2C36);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.labelContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.label {
+    padding-left: 1rem;
+}
+
+.errorLabel {
+    color: var(--color-red-500, #FB2C36);
+}
+
+:global(.dark) .errorLabel {
+    color: var(--color-red-400, #FF6467);
+}
+
+.input {
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+.submitButton {
+    max-width: 300px;
+    width: 100%;
+    min-height: 40px;
+    font-size: 1.125rem;
+    color: var(--color-gray-50, #F9FAFB);
+    border-radius: 1rem;
+    margin-top: 1rem;
+    background-color: rgb(79, 57, 246, 0.9);
+}
+
+.submitButton:disabled {
+    background-color: var(--color-gray-50, #F9FAFB);
+    border: 2px solid var(--color-gray-300, #D1D5DC);
+    color: var(--color-gray-300, #D1D5DC);
+}
+.submitButton:enabled {
+    cursor: pointer;
+}
+
+.submitButton:enabled:hover {
+    background-color: var(--color-indigo-600, #4F39F6);
+    box-shadow:  0 4px 6px -1px rgb(79, 57, 246, 0.5), 0 2px 4px -2px rgb(79, 57, 246, 0.5);
+}
+
+:global(.dark) .submitButton:disabled {
+    background-color: var(--color-gray-900, #101828);
+    border: 2px solid var(--color-gray-600, #4A5565);
+    color: var(--color-gray-600, #4A5565);
+}
+
+/*   enabled:hover:shadow-md enabled:hover:shadow-indigo-600/50*/

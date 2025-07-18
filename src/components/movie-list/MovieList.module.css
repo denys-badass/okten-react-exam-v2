@@ -1,0 +1,28 @@
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.notFound {
+    text-align: center;
+    color: var(--color-gray-500, #6A7282);
+    font-family: var(--font-limelight, 'Limelight'), serif;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    height: 100vh;
+}
+
+:global(.dark) .notFound {
+    background-color: var(--color-gray-900, #101828);
+}
+
+.masonry {
+    display: flex;
+    margin-left: -1.25rem;
+    padding: 1.5rem;
+    width: auto;
+}
+
+.masonryColumn {
+    padding-left: 1.25rem;
+}

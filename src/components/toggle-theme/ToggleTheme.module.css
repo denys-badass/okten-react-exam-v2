@@ -1,0 +1,22 @@
+.toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 26px;
+    background-color: var(--color-slate-200, #E2E8F0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle:hover {
+    background-color: var(--color-indigo-800, #372AAC);
+    color: var(--color-gray-50, #F9FAFB);
+}
+
+:global(.dark) .toggle {
+    background-color: var(--color-slate-900, rgba(15, 23, 43, 0.5));
+}

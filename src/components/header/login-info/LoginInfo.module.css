@@ -1,0 +1,22 @@
+.loginLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    min-width: 100px;
+    height: 100%;
+}
+
+.loginLink:hover {
+    color: var(--color-indigo-600, #4F39F6);
+}
+
+@media screen and (max-width: 576px) {
+    .loginLink {
+        display: grid;
+        place-items: center;
+        justify-self: self-end;
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+}

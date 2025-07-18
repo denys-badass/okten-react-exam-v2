@@ -1,0 +1,11 @@
+.loginContainer {
+    min-height: 70dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:global(.dark) .loginContainer {
+    background-color: var(--color-gray-900, #101828);
+}
