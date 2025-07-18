@@ -20,7 +20,7 @@ export const SearchPage = () => {
         <div>
             {selectedMovie && <MovieInfo movie={selectedMovie} />}
 
-            <h1 className={styles.searchTittle}>Search Results for: {params.query}</h1>
+            <h1 className={styles.searchTitle}>Search Results for: {params.query}</h1>
             <div className={styles.pageInfo}>
                 <div className={styles.line}></div>
                 <p>Page {params.page}</p>
