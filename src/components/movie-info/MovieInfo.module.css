@@ -67,6 +67,7 @@
 
 .posterLink {
     width: 40%;
+    margin-left: auto;
     display: flex;
     justify-content: end;
     align-items: center;
