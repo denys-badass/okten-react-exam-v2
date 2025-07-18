@@ -5,7 +5,7 @@ import {useLogin} from "../../hooks/useLogin.ts";
 import styles from "./LoginForm.module.css";
 
 type LoginFormProps = {
-    login: string;
+    username: string;
     password: string;
 }
 
@@ -19,8 +19,8 @@ export const LoginForm = () => {
             {loginError && <p className={styles.loginError}>{loginError}</p>}
             <form onSubmit={handleSubmit(loginHandler)} className={styles.form}>
                 <label className={styles.labelContainer}>
-                    {errors.login ? <span className={`${styles.label} ${styles.errorLabel}`}>{errors.login.message}</span> : <span className={styles.label}>Username: </span>}
-                    <input type="text" {...register('login')} className={styles.input}/>
+                    {errors.username ? <span className={`${styles.label} ${styles.errorLabel}`}>{errors.username.message}</span> : <span className={styles.label}>Username: </span>}
+                    <input type="text" {...register('username')} className={styles.input}/>
                 </label>
                 <label className={styles.labelContainer}>
                     {errors.password ? <span className={`${styles.label} ${styles.errorLabel}`}>{errors.password.message}</span> : <span className={styles.label}>Password: </span>}

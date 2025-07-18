@@ -8,6 +8,7 @@ import {GenreBadgesList} from "../genre-badges-list/GenreBadgesList.tsx";
 import {FaCamera} from "react-icons/fa6";
 import {PosterPreview} from "../poster-preview/PosterPreview.tsx";
 import styles from "./MovieInfo.module.css";
+import {getPosterUrl} from "../../utils/getPosterUrl.ts";
 
 type MovieInfoProps = {
     movie: IMovie;
@@ -29,7 +30,7 @@ export const MovieInfo: FC<MovieInfoProps> = ({movie}) => {
     } = movie;
     const fiveStar = fiveStarRating(vote_average);
     const year = getYear(release_date);
-    const backdropUrl: string = backdrop_path ? import.meta.env.VITE_MOVIE_IMAGE_URL + '/original' + backdrop_path : '/poster-placeholder.jpg';
+    const backdropUrl = getPosterUrl(backdrop_path, 'original');
 
     return (
         <div className={styles.infoContainer}>

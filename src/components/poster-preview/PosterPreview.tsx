@@ -2,6 +2,7 @@ import type {FC} from "react";
 import {FaRegWindowClose} from "react-icons/fa";
 import ReactDOM from "react-dom";
 import styles from "./PosterPreview.module.css";
+import {getPosterUrl} from "../../utils/getPosterUrl.ts";
 
 type PosterPreviewProps = {
     posterUrl: string;
@@ -13,9 +14,7 @@ export const PosterPreview: FC<PosterPreviewProps> = ({posterUrl, setShowPoster}
         setShowPoster(false);
     };
 
-    const fullPosterUrl = posterUrl
-        ? `${import.meta.env.VITE_MOVIE_IMAGE_URL}/w500${posterUrl}`
-        : '/poster-placeholder.jpg';
+    const fullPosterUrl = getPosterUrl(posterUrl, 'w500');
 
     return ReactDOM.createPortal(
         <div className={styles.posterContainer} onClick={handleClose}>

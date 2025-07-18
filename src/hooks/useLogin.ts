@@ -13,10 +13,10 @@ export const useLogin = () => {
         setLogout();
     }, []);
 
-    const loginHandler = async (data: {login: string, password: string}) => {
-        const {login, password} = data;
+    const loginHandler = async (data: {username: string, password: string}) => {
+        const {username, password} = data;
         try {
-            const loginResponse = await userService.userLogin(login, password);
+            const loginResponse = await userService.userLogin(username, password);
             setUserLogin(loginResponse);
             setLoginError(null);
             navigate('/movies');
