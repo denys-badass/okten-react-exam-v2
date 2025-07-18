@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const loginValidator = Joi.object({
-    username: Joi.string().pattern(/[a-zA-Z]+/).required().messages({
+    username: Joi.string().pattern(/[a-zA-Z0-9_-]+$/).required().messages({
         'string.pattern.base': 'Username must be a string',
         'string.empty': 'Username is required',
     }),
