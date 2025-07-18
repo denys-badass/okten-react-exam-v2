@@ -8,7 +8,7 @@ type GenreBadgesListProps = {
 
 export const GenreBadgesList: FC<GenreBadgesListProps> = ({genreIds}) => {
     if (!genreIds || genreIds.length === 0) {
-        return;
+        return null;
     }
 
     return (

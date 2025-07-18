@@ -22,7 +22,7 @@ export const movieService = {
             return data;
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                throw new Error(`Failed to search movies: ${error.response?.data.message}`);
+                throw new Error(`Failed to search movies: ${error.response?.data.message || error.message}`);
             }
             throw new Error(`Unknown error: ${error}`);
         }

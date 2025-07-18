@@ -24,7 +24,7 @@ export const MovieCard: FC<MovieCardProps> = ({movie}) => {
         <div className={`${styles.cardContainer} ${id % 2 === 0 ? 'hover:rotate-1' : 'hover:-rotate-1'}`} >
             <div className={styles.cardLink} onClick={() => setSelectedMovie(movie)}>
                         <img src={backdropUrl} alt={`${title} backdrop`}
-                             loading='lazy' className={styles.img}/> :
+                             loading='lazy' className={styles.img}/>
                 <div className={styles.cardTextContainer}>
                     <h3 className={styles.cardTitle}>{title}</h3>
                     <p>{year} year</p>

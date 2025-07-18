@@ -16,19 +16,18 @@ export const useMovieParams = () => {
     }
 
     const updateParams = (updates: Record<string, string>) => {
-        setQuery(() => {
-            const params = new URLSearchParams();
-            const currentParams = getParams();
-            const newParams: IMovieParams = {...currentParams, ...updates};
+        const params = new URLSearchParams();
+        const currentParams = getParams();
+        const newParams: IMovieParams = {...currentParams, ...updates};
 
-            Object.entries(newParams).forEach(([key, value]) => {
-                if (allowedKeys.includes(key as keyof IMovieParams) && value !== undefined && value !== '') {
-                    params.set(key, value);
-                }
-            });
-            navigate(`/movies?${params.toString()}`, {replace: true});
-            return params;
-        })
+        Object.entries(newParams).forEach(([key, value]) => {
+            if (allowedKeys.includes(key as keyof IMovieParams) && value !== undefined && value !== '') {
+                params.set(key, value);
+            }
+        });
+
+        setQuery(params);
+        navigate(`/movies?${params.toString()}`, {replace: true});
     };
 
     const params = getParams();
