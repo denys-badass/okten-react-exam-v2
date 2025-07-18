@@ -7,7 +7,7 @@ export const useSelectedMovie = (deps: string[]) => {
 
     useEffect(() => {
         clearSelectedMovie();
-    }, [...deps]);
+    }, [deps]);
 
     return movie;
 }
